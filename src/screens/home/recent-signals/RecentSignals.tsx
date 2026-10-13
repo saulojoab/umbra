@@ -12,15 +12,27 @@ import {
   RowProgressFill,
   RowProgressTrack,
 } from "./RecentSignals.style";
-import type { RecentSignalsProps } from "./RecentSignals.type";
+import type { BookRecord, RecentSignalsProps } from "./RecentSignals.type";
 
 export default function RecentSignals({
   selectedBook,
   onSelectBook,
+  importedBooks,
 }: RecentSignalsProps) {
+  const books: BookRecord[] = [
+    ...importedBooks.map((book) => ({
+      title: book.title,
+      author: `IN YOUR LIBRARY · ${book.format}`,
+      progress: "0%" as const,
+      tone: "violet" as const,
+      glyph: book.format === "EPUB" ? "E" : "P",
+    })),
+    ...recentBooks,
+  ];
+
   return (
     <BookList>
-      {recentBooks.map((book) => (
+      {books.map((book) => (
         <BookRow
           key={book.title}
           onPress={() => onSelectBook(book.title)}

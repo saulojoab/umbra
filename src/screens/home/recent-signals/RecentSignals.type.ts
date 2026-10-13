@@ -1,3 +1,5 @@
+import type { ImportedBook } from "@/domain/onboarding.type";
+
 export type BookRecord = {
   title: string;
   author: string;
@@ -9,4 +11,6 @@ export type BookRecord = {
 export type RecentSignalsProps = {
   selectedBook: string | null;
   onSelectBook: (title: string) => void;
+  importedBooks: ImportedBook[];
 };
+
