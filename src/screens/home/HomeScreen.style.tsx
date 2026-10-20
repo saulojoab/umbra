@@ -5,7 +5,7 @@ import { theme } from "@/theme";
 export const Screen = styled.View({
   flex: 1,
   overflow: "hidden",
-  backgroundColor: theme.colors.void,
+  backgroundColor: theme.colors.background,
 });
 
 export const AmbientShape = styled.View<{ $variant: "ring" | "beam" }>(
@@ -17,21 +17,22 @@ export const AmbientShape = styled.View<{ $variant: "ring" | "beam" }>(
           right: -100,
           width: 260,
           height: 260,
-          borderRadius: 130,
-          borderWidth: 1,
-          borderColor: theme.colors.ring,
+          borderRadius: theme.radii.circle,
+          borderWidth: theme.borders.hairline,
+          borderColor: theme.colors.accent,
           transform: [{ rotate: "28deg" }],
         }
       : {
           top: 150,
           left: -150,
           width: 280,
-          height: 1,
-          backgroundColor: theme.colors.beam,
+          height: theme.borders.hairline,
+          backgroundColor: theme.colors.highlight,
           transform: [{ rotate: "-34deg" }],
         }),
   }),
 );
+
 export const Console = styled.View({
   flex: 1,
   overflow: "hidden",

@@ -78,6 +78,8 @@ For components that benefit from separation of concerns, use the following struc
 
 1. Use design tokens from `src/theme.ts` for colors, spacing, typography, borders, and opacity in style files. If a needed value does not exist, add a named token to the theme instead of introducing an unexplained one-off value in a styled component.
 2. Leave one blank line between styled component declarations in `.style.tsx` files.
+3. Keep the design system intentionally small: each token category may contain at most 10 general-purpose tokens. Prefer semantic names such as `primary`, `secondary`, and `surface` over screen- or component-specific names.
+4. Warn the user when a task changes `src/theme.ts`, token values, token names, or design-system rules. Any such change must be justified in the pull request description with its reason, scope, and general-purpose rationale.
 
 ### Scope and Exceptions
 

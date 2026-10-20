@@ -1,17 +1,19 @@
 import styled from "@emotion/native";
 
-export const Footer = styled.View({ marginTop: 20 });
+import { theme } from "@/theme";
+
+export const Footer = styled.View({ marginTop: theme.spacing.large });
 
 export const ButtonRow = styled.View({
   flexDirection: "row",
   alignItems: "stretch",
-  gap: 10,
+  gap: theme.spacing.medium,
 });
 
 export const ButtonCell = styled.View({ flex: 1 });
 
 export const ErrorMessage = styled.Text({
-  marginBottom: 10,
-  color: "#ff9eaf",
-  fontSize: 12,
+  marginBottom: theme.spacing.medium,
+  color: theme.colors.error,
+  fontSize: theme.typography.body,
 });

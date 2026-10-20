@@ -12,7 +12,7 @@ export const BookCard = styled.View({
   width: "18.5%",
   aspectRatio: 0.66,
   overflow: "hidden",
-  backgroundColor: theme.colors.panel,
+  backgroundColor: theme.colors.surface,
 });
 
 export const Cover = styled(Image)({
@@ -25,15 +25,15 @@ export const BookOverlay = styled.View({
   right: 0,
   bottom: 0,
   left: 0,
-  paddingVertical: theme.spacing.coverOverlayVertical,
-  paddingHorizontal: theme.spacing.coverOverlayHorizontal,
-  backgroundColor: theme.colors.coverOverlay,
+  paddingVertical: theme.spacing.small,
+  paddingHorizontal: theme.spacing.small,
+  backgroundColor: theme.colors.surfaceMuted,
 });
 
 export const BookProgress = styled.Text({
-  color: theme.colors.ink,
-  fontSize: theme.typography.progress,
+  color: theme.colors.primary,
+  fontSize: theme.typography.label,
   fontWeight: "800",
-  letterSpacing: theme.typography.progressTracking,
+  letterSpacing: theme.tracking.normal,
   textAlign: "center",
 });

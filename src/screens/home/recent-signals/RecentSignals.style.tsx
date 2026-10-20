@@ -2,68 +2,82 @@ import styled from "@emotion/native";
 
 import { theme } from "@/theme";
 
-export const BookList = styled.View({ gap: 5 });
+export const BookList = styled.View({ gap: theme.spacing.small });
+
 export const BookRow = styled.Pressable({
-  minHeight: 52,
+  minHeight: theme.spacing.section,
   flexDirection: "row",
   alignItems: "center",
-  padding: 6,
-  borderWidth: 1,
+  padding: theme.spacing.small,
+  borderWidth: theme.borders.hairline,
   borderColor: theme.borders.medium,
-  backgroundColor: theme.colors.panelMuted,
+  backgroundColor: theme.colors.surfaceMuted,
 });
+
 export const BookGlyph = styled.View<{ $tone: "violet" | "rust" }>(
   ({ $tone }) => ({
     width: 36,
     height: 40,
     alignItems: "center",
     justifyContent: "center",
-    borderWidth: 1,
-    borderColor: theme.colors.glyphBorder,
+    borderWidth: theme.borders.hairline,
+    borderColor: theme.colors.tertiary,
     backgroundColor:
-      $tone === "violet" ? theme.colors.violet : theme.colors.rust,
+      $tone === "violet" ? theme.colors.surface : theme.colors.surface,
   }),
 );
+
 export const BookGlyphText = styled.Text({
-  color: theme.colors.ink,
-  fontSize: 12,
+  color: theme.colors.primary,
+  fontSize: theme.typography.body,
   fontWeight: "300",
-  letterSpacing: 1,
+  letterSpacing: theme.tracking.wide,
 });
+
 export const BookGlyphLine = styled.View({
   width: 14,
-  height: 1,
-  marginTop: 3,
-  backgroundColor: theme.colors.signal,
+  height: theme.borders.hairline,
+  marginTop: theme.spacing.tiny,
+  backgroundColor: theme.colors.accent,
 });
-export const BookDetails = styled.View({ flex: 1, minWidth: 0, marginLeft: 8 });
+
+export const BookDetails = styled.View({
+  flex: 1,
+  minWidth: 0,
+  marginLeft: theme.spacing.small,
+});
+
 export const BookTitle = styled.Text({
-  color: theme.colors.ink,
-  fontSize: 12,
+  color: theme.colors.primary,
+  fontSize: theme.typography.body,
   fontWeight: "500",
 });
+
 export const BookAuthor = styled.Text({
-  marginTop: 2,
-  color: theme.colors.textTertiary,
-  fontSize: 7,
+  marginTop: theme.spacing.tiny,
+  color: theme.colors.tertiary,
+  fontSize: theme.typography.micro,
   fontWeight: "700",
-  letterSpacing: 1,
+  letterSpacing: theme.tracking.wide,
 });
+
 export const RowProgressTrack = styled.View({
   width: "86%",
-  height: 2,
-  marginTop: 5,
-  backgroundColor: theme.colors.signalDark,
+  height: theme.spacing.tiny,
+  marginTop: theme.spacing.small,
+  backgroundColor: theme.colors.tertiary,
 });
+
 export const RowProgressFill = styled.View<{ $progress: `${number}%` }>(
   ({ $progress }) => ({
     width: $progress,
     height: "100%",
-    backgroundColor: theme.colors.signalSoft,
+    backgroundColor: theme.colors.secondary,
   }),
 );
+
 export const BookProgress = styled.Text({
-  color: theme.colors.signalSoft,
+  color: theme.colors.secondary,
   fontSize: theme.typography.label,
   fontWeight: "700",
 });

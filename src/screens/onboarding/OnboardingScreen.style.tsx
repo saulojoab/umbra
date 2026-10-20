@@ -5,12 +5,12 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 export const Screen = styled.View({
   flex: 1,
-  backgroundColor: theme.colors.void,
+  backgroundColor: theme.colors.background,
 });
 
 export const OnboardingContainer = styled(SafeAreaView)({
   flex: 1,
-  paddingHorizontal: 22,
-  paddingTop: 24,
-  paddingBottom: 18,
+  paddingHorizontal: theme.spacing.screen,
+  paddingTop: theme.spacing.section,
+  paddingBottom: theme.spacing.large,
 });

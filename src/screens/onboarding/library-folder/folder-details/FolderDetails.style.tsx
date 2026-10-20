@@ -2,22 +2,22 @@ import { theme } from "@/theme";
 import styled from "@emotion/native";
 
 export const FolderDetailsContainer = styled.View({
-  marginTop: 18,
-  padding: 16,
-  borderRadius: 6,
-  borderWidth: 1,
+  marginTop: theme.spacing.large,
+  padding: theme.spacing.content,
+  borderRadius: theme.radii.medium,
+  borderWidth: theme.borders.hairline,
   borderColor: theme.borders.subtle,
-  backgroundColor: theme.colors.panel,
+  backgroundColor: theme.colors.surface,
 });
 
 export const FolderName = styled.Text({
-  color: theme.colors.ink,
-  fontSize: 15,
+  color: theme.colors.primary,
+  fontSize: theme.typography.copy,
   fontWeight: "700",
 });
 
 export const FolderMeta = styled.Text({
-  marginTop: 5,
-  color: theme.colors.inkMuted,
-  fontSize: 11,
+  marginTop: theme.spacing.small,
+  color: theme.colors.tertiary,
+  fontSize: theme.typography.body,
 });

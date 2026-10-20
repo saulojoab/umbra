@@ -5,34 +5,34 @@ import { theme } from "@/theme";
 export const Container = styled.ScrollView({ flex: 1 });
 
 export const Eyebrow = styled.Text({
-  color: theme.colors.signalSoft,
-  fontSize: 10,
+  color: theme.colors.secondary,
+  fontSize: theme.typography.label,
   fontWeight: "700",
-  letterSpacing: 2,
+  letterSpacing: theme.tracking.wide,
 });
 
 export const Title = styled.Text({
-  marginTop: 12,
-  color: theme.colors.ink,
-  fontSize: 34,
+  marginTop: theme.spacing.medium,
+  color: theme.colors.primary,
+  fontSize: theme.typography.title,
   fontWeight: "300",
-  letterSpacing: -1.1,
-  lineHeight: 39,
+  letterSpacing: theme.tracking.tight,
+  lineHeight: theme.typography.line,
 });
 
 export const Copy = styled.Text({
-  marginTop: 12,
-  color: theme.colors.inkMuted,
-  fontSize: 15,
-  lineHeight: 23,
+  marginTop: theme.spacing.medium,
+  color: theme.colors.tertiary,
+  fontSize: theme.typography.copy,
+  lineHeight: theme.typography.line,
 });
 
 export const Options = styled.View({
   flexDirection: "row",
   flexWrap: "wrap",
   justifyContent: "space-between",
-  rowGap: 12,
-  marginTop: 26,
+  rowGap: theme.spacing.medium,
+  marginTop: theme.spacing.section,
 });
 
 export const Spacer = styled.View({ flex: 1 });

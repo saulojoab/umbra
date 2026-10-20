@@ -4,32 +4,32 @@ import styled from "@emotion/native";
 export const Brand = styled.View({
   flexDirection: "row",
   alignItems: "center",
-  gap: 10,
-  marginBottom: 30,
+  gap: theme.spacing.medium,
+  marginBottom: theme.spacing.display,
 });
 
 export const BrandMark = styled.Text({
   width: 32,
   height: 32,
-  borderWidth: 1,
+  borderWidth: theme.borders.hairline,
   borderColor: theme.borders.bright,
-  borderRadius: 16,
-  color: theme.colors.signal,
-  fontSize: 17,
-  lineHeight: 30,
+  borderRadius: theme.radii.circle,
+  color: theme.colors.accent,
+  fontSize: theme.typography.title,
+  lineHeight: theme.spacing.display,
   textAlign: "center",
 });
 
 export const BrandName = styled.Text({
-  color: theme.colors.ink,
-  fontSize: 12,
+  color: theme.colors.primary,
+  fontSize: theme.typography.body,
   fontWeight: "700",
-  letterSpacing: 4,
+  letterSpacing: theme.tracking.brand,
 });
 
 export const Divider = styled.View({
   width: 42,
   height: 2,
-  marginBottom: 22,
-  backgroundColor: theme.colors.signal,
+  marginBottom: theme.spacing.screen,
+  backgroundColor: theme.colors.accent,
 });

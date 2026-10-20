@@ -19,36 +19,36 @@ type VariantStyle = {
 
 const variantStyles = {
   primary: {
-    backgroundColor: theme.colors.signal,
-    borderColor: theme.colors.signal,
-    borderWidth: 1,
-    color: theme.colors.void,
+    backgroundColor: theme.colors.accent,
+    borderColor: theme.colors.accent,
+    borderWidth: theme.borders.hairline,
+    color: theme.colors.background,
   },
   secondary: {
     backgroundColor: "transparent",
     borderColor: theme.borders.bright,
-    borderWidth: 1,
-    color: theme.colors.ink,
+    borderWidth: theme.borders.hairline,
+    color: theme.colors.primary,
   },
   quiet: {
     backgroundColor: "transparent",
     borderColor: "transparent",
-    borderWidth: 1,
-    color: theme.colors.inkMuted,
+    borderWidth: theme.borders.hairline,
+    color: theme.colors.tertiary,
   },
 } satisfies Record<ButtonVariant, VariantStyle>;
 
 export const ButtonRoot = styled.Pressable<ButtonStyleProps>(
   ({ $variant, $disabled, $marginTop, $marginBottom }) => ({
-    minHeight: $variant === "quiet" ? 42 : 54,
+    minHeight: $variant === "quiet" ? theme.spacing.section : theme.spacing.display,
     marginTop: $marginTop,
     marginBottom: $marginBottom,
     flexDirection: "row",
     alignItems: "center",
     justifyContent: $variant === "quiet" ? "center" : "space-between",
-    paddingHorizontal: $variant === "quiet" ? 10 : 18,
-    borderRadius: 4,
-    opacity: $disabled ? 0.55 : 1,
+    paddingHorizontal: $variant === "quiet" ? theme.spacing.medium : theme.spacing.large,
+    borderRadius: theme.radii.small,
+    opacity: $disabled ? theme.opacity.disabled : 1,
     ...variantStyles[$variant],
   }),
 );
@@ -56,16 +56,16 @@ export const ButtonRoot = styled.Pressable<ButtonStyleProps>(
 export const ButtonLabel = styled.Text<{ $variant: ButtonVariant }>(
   ({ $variant }) => ({
     color: variantStyles[$variant].color,
-    fontSize: $variant === "quiet" ? 11 : 14,
+    fontSize: $variant === "quiet" ? theme.typography.body : theme.typography.button,
     fontWeight: "700",
-    letterSpacing: $variant === "quiet" ? 1.5 : 0.3,
+    letterSpacing: $variant === "quiet" ? theme.tracking.label : theme.tracking.normal,
   }),
 );
 
 export const ButtonArrow = styled.Text<{ $variant: ButtonVariant }>(
   ({ $variant }) => ({
     color: variantStyles[$variant].color,
-    fontSize: 14,
+    fontSize: theme.typography.button,
     fontWeight: "700",
   }),
 );
