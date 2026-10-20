@@ -4,15 +4,18 @@ import { theme } from "@/theme";
 
 export const BookList = styled.View({ gap: theme.spacing.small });
 
-export const BookRow = styled.Pressable({
-  minHeight: theme.spacing.section,
-  flexDirection: "row",
-  alignItems: "center",
-  padding: theme.spacing.small,
-  borderWidth: theme.borders.hairline,
-  borderColor: theme.borders.medium,
-  backgroundColor: theme.colors.surfaceMuted,
-});
+export const BookRow = styled.Pressable<{ $selected: boolean }>(
+  ({ $selected }) => ({
+    minHeight: theme.spacing.section,
+    flexDirection: "row",
+    alignItems: "center",
+    padding: theme.spacing.small,
+    borderWidth: theme.borders.hairline,
+    borderColor: theme.borders.medium,
+    backgroundColor: theme.colors.surfaceMuted,
+    opacity: $selected ? theme.opacity.pressed : 1,
+  }),
+);
 
 export const BookGlyph = styled.View<{ $tone: "violet" | "rust" }>(
   ({ $tone }) => ({

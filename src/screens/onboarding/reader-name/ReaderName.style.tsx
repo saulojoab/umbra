@@ -1,4 +1,5 @@
 import styled from "@emotion/native";
+import type { TextInputProps } from "react-native";
 
 import { theme } from "@/theme";
 
@@ -27,7 +28,7 @@ export const Copy = styled.Text({
   lineHeight: theme.typography.line,
 });
 
-export const NameInput = styled.TextInput({
+const StyledNameInput = styled.TextInput({
   flex: 1,
   marginTop: theme.spacing.section,
   paddingHorizontal: theme.spacing.content,
@@ -39,5 +40,12 @@ export const NameInput = styled.TextInput({
   fontSize: theme.typography.heading,
   fontFamily: "serif",
 });
+
+export const NameInput = (props: TextInputProps) => (
+  <StyledNameInput
+    {...props}
+    placeholderTextColor={theme.colors.tertiary}
+  />
+);
 
 export const Spacer = styled.View({ flex: 1 });

@@ -1,4 +1,5 @@
 import styled from "@emotion/native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 import { theme } from "@/theme";
 
@@ -6,6 +7,11 @@ export const Screen = styled.View({
   flex: 1,
   overflow: "hidden",
   backgroundColor: theme.colors.background,
+});
+
+export const SafeAreaContainer = styled(SafeAreaView)({
+  flex: 1,
+  overflow: "hidden",
 });
 
 export const AmbientShape = styled.View<{ $variant: "ring" | "beam" }>(

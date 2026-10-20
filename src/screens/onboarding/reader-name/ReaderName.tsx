@@ -24,7 +24,6 @@ export default function ReaderName({ onBack, onContinue }: ReaderNameProps) {
         value={readerName}
         onChangeText={setReaderName}
         placeholder="Your name"
-        placeholderTextColor="#5c898d"
         autoCapitalize="words"
         autoComplete="name"
         autoCorrect={false}

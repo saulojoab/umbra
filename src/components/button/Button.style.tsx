@@ -6,8 +6,6 @@ import type { ButtonVariant } from "./Button.type";
 type ButtonStyleProps = {
   $variant: ButtonVariant;
   $disabled: boolean;
-  $marginTop?: number;
-  $marginBottom?: number;
 };
 
 type VariantStyle = {
@@ -39,10 +37,8 @@ const variantStyles = {
 } satisfies Record<ButtonVariant, VariantStyle>;
 
 export const ButtonRoot = styled.Pressable<ButtonStyleProps>(
-  ({ $variant, $disabled, $marginTop, $marginBottom }) => ({
+  ({ $variant, $disabled }) => ({
     minHeight: $variant === "quiet" ? theme.spacing.section : theme.spacing.display,
-    marginTop: $marginTop,
-    marginBottom: $marginBottom,
     flexDirection: "row",
     alignItems: "center",
     justifyContent: $variant === "quiet" ? "center" : "space-between",

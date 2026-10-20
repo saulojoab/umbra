@@ -1,7 +1,10 @@
-import { StatusBar } from "expo-status-bar";
+import { LightStatusBar } from "@/components/status-bar/StatusBar.style";
 
 import { useOnboardingFlow } from "./OnboardingScreen.service";
-import { OnboardingContainer, Screen } from "./OnboardingScreen.style";
+import {
+  OnboardingContainer,
+  Screen,
+} from "./OnboardingScreen.style";
 
 import LibraryFolderStep from "./library-folder/LibraryFolder";
 import ReaderName from "./reader-name/ReaderName";
@@ -17,7 +20,7 @@ export default function OnboardingScreen() {
 
   return (
     <Screen>
-      <StatusBar style="light" />
+      <LightStatusBar />
       <OnboardingContainer>
         {step === 0 && <WelcomeContainer onBegin={begin} />}
 

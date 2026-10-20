@@ -5,6 +5,7 @@ import {
   Copy,
   Eyebrow,
   StepLabel,
+  WelcomeButtonContainer,
   WelcomeTitle,
 } from "./WelcomeContainer.style";
 import type { WelcomeContainerProps } from "./WelcomeContainer.type";
@@ -21,13 +22,14 @@ export default function WelcomeContainer({ onBegin }: WelcomeContainerProps) {
         and settle into your next book.
       </Copy>
 
-      <Button
-        label="Get started"
-        onPress={onBegin}
-        accessibilityLabel="Get started with Umbra"
-        marginTop={34}
-        showArrow
-      />
+      <WelcomeButtonContainer>
+        <Button
+          label="Get started"
+          onPress={onBegin}
+          accessibilityLabel="Get started with Umbra"
+          showArrow
+        />
+      </WelcomeButtonContainer>
 
       <StepLabel>YOUR LIBRARY BEGINS HERE</StepLabel>
     </Container>

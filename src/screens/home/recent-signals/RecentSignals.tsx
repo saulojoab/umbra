@@ -36,9 +36,7 @@ export default function RecentSignals({
         <BookRow
           key={book.title}
           onPress={() => onSelectBook(book.title)}
-          style={({ pressed }) => ({
-            opacity: pressed ? 0.72 : selectedBook === book.title ? 0.88 : 1,
-          })}
+          $selected={selectedBook === book.title}
           accessibilityRole="button"
           accessibilityLabel={`Open ${book.title}`}
           accessibilityState={{ selected: selectedBook === book.title }}

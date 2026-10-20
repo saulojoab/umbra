@@ -7,16 +7,12 @@ export default function Button({
   variant = "primary",
   showArrow = false,
   disabled = false,
-  marginTop,
-  marginBottom,
   accessibilityLabel,
 }: ButtonProps) {
   return (
     <ButtonRoot
       $variant={variant}
       $disabled={disabled}
-      $marginTop={marginTop}
-      $marginBottom={marginBottom}
       disabled={disabled}
       onPress={onPress}
       accessibilityRole="button"

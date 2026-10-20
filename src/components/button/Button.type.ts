@@ -8,7 +8,5 @@ export type ButtonProps = {
   variant?: ButtonVariant;
   showArrow?: boolean;
   disabled?: boolean;
-  marginTop?: number;
-  marginBottom?: number;
   accessibilityLabel?: string;
 };

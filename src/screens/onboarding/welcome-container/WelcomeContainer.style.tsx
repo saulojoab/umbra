@@ -74,3 +74,7 @@ export const StepLabel = styled.Text({
   fontWeight: "700",
   letterSpacing: theme.tracking.label,
 });
+
+export const WelcomeButtonContainer = styled.View({
+  marginTop: 34,
+});
