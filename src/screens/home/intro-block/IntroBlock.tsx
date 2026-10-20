@@ -1,20 +1,13 @@
-import {
-  Eyebrow,
-  Heading,
-  HeadingRule,
-  IntroBlockContainer,
-  IntroCopy,
-} from "./IntroBlock.style";
+import { Eyebrow, Heading, IntroBlockContainer } from "./IntroBlock.style";
+import { IIntroBlock } from "./IntroBlock.type";
 
-export default function IntroBlock({ readerName }: { readerName: string }) {
+export default function IntroBlock({ readerName }: IIntroBlock) {
   return (
     <IntroBlockContainer>
       <Eyebrow numberOfLines={1}>
-        GOOD EVENING, {readerName.trim().toUpperCase() || "READER"}
+        WELCOME BACK, {readerName.trim().toUpperCase() || "READER"}
       </Eyebrow>
-      <Heading>Enter the{"\n"}quiet signal.</Heading>
-      <HeadingRule />
-      <IntroCopy>A quiet place for your next transmission.</IntroCopy>
+      <Heading>Your reading{"\n"}at a glance.</Heading>
     </IntroBlockContainer>
   );
 }

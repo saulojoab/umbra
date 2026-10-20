@@ -23,6 +23,7 @@ export const theme = {
     artworkLine: 'rgba(145, 250, 239, 0.25)',
     artworkGlow: 'rgba(56, 195, 255, 0.18)',
     glyphBorder: 'rgba(255, 255, 255, 0.18)',
+    coverOverlay: 'rgba(4, 20, 21, 0.82)',
   },
   spacing: {
     micro: 4,
@@ -31,6 +32,10 @@ export const theme = {
     large: 18,
     screen: 22,
     section: 28,
+    introBlock: 72,
+    coverOverlayVertical: 7,
+    coverOverlayHorizontal: 6,
+    introMessageOffset: 2,
   },
   typography: {
     wordmark: 18,
@@ -39,6 +44,14 @@ export const theme = {
     body: 13,
     label: 10,
     micro: 8,
+    introWelcome: 19,
+    introWelcomeLine: 23,
+    introMessage: 14,
+    introMessageLine: 17,
+    progress: 9,
+    introWelcomeTracking: 1.1,
+    introMessageTracking: -0.2,
+    progressTracking: 0.4,
   },
   borders: {
     subtle: 'rgba(144, 255, 239, 0.14)',

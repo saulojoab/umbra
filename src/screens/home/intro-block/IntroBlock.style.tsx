@@ -3,34 +3,30 @@ import styled from "@emotion/native";
 import { theme } from "@/theme";
 
 export const IntroBlockContainer = styled.View({
-  paddingTop: 12,
-  paddingBottom: 10,
+  minHeight: theme.spacing.introBlock,
+  flexDirection: "row",
+  alignItems: "center",
+  justifyContent: "space-between",
+  paddingTop: theme.spacing.medium,
+  paddingBottom: theme.spacing.small,
 });
+
 export const Eyebrow = styled.Text({
+  width: "56%",
   color: theme.colors.signalSoft,
-  fontSize: 9,
-  fontWeight: "700",
-  letterSpacing: 2.5,
+  fontSize: theme.typography.introWelcome,
+  fontWeight: "600",
+  letterSpacing: theme.typography.introWelcomeTracking,
+  lineHeight: theme.typography.introWelcomeLine,
 });
+
 export const Heading = styled.Text({
-  marginTop: 5,
+  width: "40%",
+  marginTop: theme.spacing.introMessageOffset,
   color: theme.colors.ink,
-  fontSize: 30,
+  fontSize: theme.typography.introMessage,
   fontWeight: "300",
-  letterSpacing: -1.2,
-  lineHeight: 32,
-});
-export const HeadingRule = styled.View({
-  width: 30,
-  height: 2,
-  marginTop: 8,
-  backgroundColor: theme.colors.signal,
-});
-export const IntroCopy = styled.Text({
-  maxWidth: 310,
-  marginTop: 6,
-  color: theme.colors.inkMuted,
-  fontSize: 11,
-  lineHeight: 14,
-  letterSpacing: 0.1,
+  letterSpacing: theme.typography.introMessageTracking,
+  lineHeight: theme.typography.introMessageLine,
+  textAlign: "right",
 });

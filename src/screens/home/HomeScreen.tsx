@@ -1,24 +1,19 @@
 import { StatusBar } from "expo-status-bar";
-import { useEffect, useState } from "react";
+import { router } from "expo-router";
+import { useEffect } from "react";
+import { ScrollView } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
+import Button from "@/components/button/Button";
 import { useOnboardingStore } from "@/stores/onboardingStore";
-import BottomNav from "./bottom-nav/BottomNav";
 import { AmbientShape, Console, Screen } from "./HomeScreen.style";
 import IntroBlock from "./intro-block/IntroBlock";
-import RecentSignals from "./recent-signals/RecentSignals";
+import RecentBooks from "./recent-books/RecentBooks";
+import ReadingSummary from "./reading-summary/ReadingSummary";
 import SectionHeader from "./section-header/SectionHeader";
-import {
-  ViewAll,
-  ViewAllPressable,
-} from "./section-header/SectionHeader.style";
 import TopBar from "./top-bar/TopBar";
 
 export default function HomeScreen() {
-  const [activeNav, setActiveNav] = useState<"signal" | "library" | "system">(
-    "signal",
-  );
-  const [selectedBook, setSelectedBook] = useState<string | null>(null);
   const importedBooks = useOnboardingStore((state) => state.books);
   const readerName = useOnboardingStore((state) => state.readerName);
   const refreshLibrary = useOnboardingStore((state) => state.refreshLibrary);
@@ -34,28 +29,25 @@ export default function HomeScreen() {
       <AmbientShape $variant="beam" />
       <SafeAreaView style={{ flex: 1, overflow: "hidden" }}>
         <Console accessibilityLabel="Umbra reader home">
-          <TopBar />
-          <IntroBlock readerName={readerName} />
-          <SectionHeader title="CONTINUE READING" meta="01 / 03" />
-          <SectionHeader
-            title="RECENT SIGNALS"
-            withTopGap
-            action={
-              <ViewAllPressable
-                onPress={() => setActiveNav("library")}
-                accessibilityRole="button"
-                accessibilityLabel="View all recent signals"
-              >
-                <ViewAll>VIEW ALL ↗</ViewAll>
-              </ViewAllPressable>
-            }
-          />
-          <RecentSignals
-            selectedBook={selectedBook}
-            onSelectBook={setSelectedBook}
-            importedBooks={importedBooks}
-          />
-          <BottomNav activeNav={activeNav} onChangeNav={setActiveNav} />
+          <ScrollView showsVerticalScrollIndicator={false}>
+            <TopBar />
+            <IntroBlock readerName={readerName} />
+            <ReadingSummary />
+            <SectionHeader
+              title="LATEST BOOKS"
+              withTopGap
+              action={
+                <Button
+                  label="OPEN LIBRARY"
+                  onPress={() => router.push("/library")}
+                  variant="secondary"
+                  showArrow
+                  accessibilityLabel="Open book library"
+                />
+              }
+            />
+            <RecentBooks importedBooks={importedBooks} />
+          </ScrollView>
         </Console>
       </SafeAreaView>
     </Screen>

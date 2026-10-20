@@ -71,6 +71,13 @@ For components that benefit from separation of concerns, use the following struc
 8. When creating a new component, create only the files justified by its responsibilities. Do not generate empty files or boilerplate solely to satisfy the naming convention.
 9. Keep services focused. Extract shared logic into separate modules when it is genuinely reused or has an independent responsibility.
 10. Do not introduce new architectural patterns or dependencies without a clear technical reason.
+11. Service files should ideally export only one service hook, named `useContainerNameService`. All logic belonging to that container must live inside the hook and be returned by it for the component to consume.
+12. The service hook's return block must contain only variable names. Prepare all values and logic before the return block, then return those variables without transformations or expressions.
+
+### Styling Rules
+
+1. Use design tokens from `src/theme.ts` for colors, spacing, typography, borders, and opacity in style files. If a needed value does not exist, add a named token to the theme instead of introducing an unexplained one-off value in a styled component.
+2. Leave one blank line between styled component declarations in `.style.tsx` files.
 
 ### Scope and Exceptions
 
