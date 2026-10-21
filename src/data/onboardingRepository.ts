@@ -13,7 +13,7 @@ export async function loadOnboardingData() {
   );
   const values = Object.fromEntries(rows.map(({ key, value }) => [key, value]));
   const books = await db.getAllAsync<ImportedBook>(
-    "SELECT id, title, author, format, uri, size, mimeType, lastModified FROM books ORDER BY rowid DESC",
+    "SELECT id, title, author, format, uri, size, mimeType, lastModified, coverUri, coverTextTone FROM books ORDER BY rowid DESC",
   );
 
   return {
@@ -43,7 +43,7 @@ export async function saveOnboardingData(
     await db.runAsync("DELETE FROM books");
     for (const book of books) {
       await db.runAsync(
-        "INSERT OR REPLACE INTO books (id, title, author, format, uri, size, mimeType, lastModified) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+        "INSERT OR REPLACE INTO books (id, title, author, format, uri, size, mimeType, lastModified, coverUri, coverTextTone) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
         book.id,
         book.title,
         book.author,
@@ -52,6 +52,8 @@ export async function saveOnboardingData(
         book.size,
         book.mimeType,
         book.lastModified,
+        book.coverUri ?? null,
+        book.coverTextTone ?? null,
       );
     }
     await db.runAsync(

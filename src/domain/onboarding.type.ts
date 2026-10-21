@@ -1,4 +1,5 @@
 export type ReadingAppearance = "light" | "paper" | "dark" | "umbra";
+export type CoverTextTone = "light" | "dark";
 
 export type ImportedBook = {
   id: string;
@@ -9,6 +10,8 @@ export type ImportedBook = {
   author: string | null;
   mimeType: string | null;
   lastModified: number | null;
+  coverUri?: string | null;
+  coverTextTone?: CoverTextTone | null;
 };
 
 export type LibraryFolder = {
